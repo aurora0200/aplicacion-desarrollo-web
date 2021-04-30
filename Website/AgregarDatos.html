@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<html>
+<style>
+body{background-color: #403b33;height: 100%}
+form
+{
+  background-color: #faf22e;
+  position:fixed;
+  top:10%;
+  min-width: 800px;
+  left:40px;
+  -moz-border-radius:24px;
+  border-radius:24px;
+  border: 2px solid black;
+  opacity: 0.8;
+  padding-bottom: 30px;
+}
+td{text-align:center}
+#bImage
+{
+  height: 90%;
+  background-image: url('background.png');
+  background-size: 100%,90%;
+  background-position:absolute;
+  background-repeat: no-repeat;
+  background-position: fixed;
+  padding: 20%;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+#bUDEM
+{
+  background-position: fixed;
+  background-image: url('udemLogo.png');
+  background-size: 200px,40%;
+  background-position: left, center;
+  background-repeat: no-repeat;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+footer
+{
+  position: fixed;
+  bottom: 20px;
+  display: block;
+  right: 30px;
+}
+#a
+{
+  color: black;
+}
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 50px;
+  -moz-border-radius:8px;
+  border-radius:8px;
+  text-align: center;
+  text-decoration: none;
+}
+.fa-instagram {
+  background: white;
+  color: #403b33;
+}
+.fa-twitter {
+  background: white;
+  color: #403b33;
+}
+.fa-google {
+  background: white;
+  color: #403b33;
+}
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+/* Facebook */
+.fa-facebook {
+  background: white;
+  color: #403b33;
+}
+</style>
+<body>
+  <div id= "bUDEM">
+  </div>
+  <div id= "bImage">
+      <form style="position:absolute;">
+        <div>
+            <p style="position: relative;left:10px;">Nombre Completo:</p>
+            <input type="text" placeholder="Nombres"></input>
+            <input type="text" placeholder="Apellidos"></input><br>
+            <p style="position: relative;left:10px;">Fecha de Nacimiento: <input type="date"></input></p>
+            <p style="position: relative;left:10px;">Direccion:</p>
+            <input style="position: relative;left:30px;"></input>
+            <p style="position: relative;left:10px;">Estatus Civil:</p>
+            <select name="estado Civil" style="position: relative;left:30px;">
+              <option>Primera Opcion</option>
+            </select>
+            <p style="position: relative;left:10px;">Numero de Hijos <input type="number"min="0" placeholder="0" style="width:50px;"></input></p>
+            <p style="position: relative;left:10px;">Nivel de escolaridad:</p>
+            <select name="estado Civil" style="position: relative;left:30px;">
+              <option>Primaria</option>
+            </select>
+            <p style="position: relative;left:10px;">Situacion Laboral:</p>
+            <select name="estado Civil" style="position: relative;left:30px;">
+              <option>Desempleado</option>
+            </select>
+            <p style="position: relative;left:10px;">Nombre de la empresa que labora:</p>
+            <input type="text" placeholder="" style="position: relative;width:250px; left:10px;"></input>
+        </div>
+        <div style="position:absolute; right:0px; top:10px;">
+            <p style="position: relative;">Telefono:<input type="text"></input></p>
+            <p style="position: relative;">Correo:<input type="text"></input></p><br>
+            <p>Acta de Nacimiento: <input type="file"></input></p><br><br>
+            <p>Comprobante de Estudios: <input type="file"></input></p><br>
+            <p>CURP: <input type="file"></input></p>
+            <p>**Disclaimer**</p>
+            <input type="checkbox">He leido y acepto los terminos y condiciones</input><br><br><br>
+            <button style="position:relative; left:180px; width:150px;height:50px; background:#403b33; color:#faf22e; ">Continuar</button>
+
+
+        </div>
+
+      </form>
+    </div>
+    <footer>
+
+  <a href="https://www.w3schools.com/tags/tag_footer.asp" id="a" style="padding-left:30px; padding-bottom: 10px;"> Numero de Contacto</a>
+  <a href="https://www.w3schools.com/tags/tag_footer.asp" id="a" style="padding-right:260px; padding">| Correo</a>
+    <a href="#" class="fa fa-facebook" ></a>
+      <a href="#" class="fa fa-instagram" ></a>
+      <a href="#" class="fa fa-twitter" ></a>
+      <a href="#" class="fa fa-google">+</a>
+      <img src="188.png" style=" height:75px; width:150px; padding-left:100px; padding-right:10px;">
+
+  </footer>
+</body>
+</html>
