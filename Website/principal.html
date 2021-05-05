@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <html>
+<meta charset="utf-8">
 <style>
+
 body{background-color: #403b33;height: 100%}
 form
 {
@@ -44,7 +46,7 @@ td{text-align:center}
 footer
 {
   position: fixed;
-  bottom: 20px;
+  bottom: 10px;
   display: block;
   right: 30px;
 }
@@ -87,27 +89,28 @@ footer
   <div id= "bUDEM">
   </div>
   <div id= "bImage">
-      <form style="position:absolute;">
+      <form style="position:absolute; left: 60%; top: 20%" action="validar.php" method="POST" target="_blank">
         <h3 style="position: relative;  width: 80%; left:40px " >Usuario:</h3>
-        <input type="text" style="position: relative;  width: 80%; left:40px "></input>
+        <input type="text" name="usuario" style="position: relative;  width: 80%; left:40px "></input>
         <h3 style="position: relative;  width: 80%; left:40px; top:80px; " >Contrasena:</h3>
-        <input type="password" style="position: relative;  width: 80%; left:40px;top:80px; "></input>
+        <input type="password" name="pass" style="position: relative;  width: 80%; left:40px;top:80px; "></input>
         <!--FALTA AGREGAR EL POP UP-->
         <p style="position: relative;  width: 100%;top:100px; text-align: center;"><a href="https://www.w3schools.com/tags/tag_footer.asp" id="a">Olvide Mi Contraseña</a></p>
-        <button style="position: relative; left: 40%;width: 20%;top:100px; height: 10%; -moz-border-radius:8px;   border-radius:8px;">Entrar</button>
+        <input type="submit" value="Entrar" style="position: relative; left: 40%;width: 20%;top:100px; height: 10%; -moz-border-radius:8px;   border-radius:8px;">
       </form>
     </div>
+    <div></div>
     <footer>
 
-  <a href="https://www.w3schools.com/tags/tag_footer.asp" id="a" style="padding-left:30px; padding-bottom: 10px;"> Numero de Contacto</a>
-  <a href="https://www.w3schools.com/tags/tag_footer.asp" id="a" style="padding-right:260px; padding">| Correo</a>
-    <a href="#" class="fa fa-facebook" ></a>
-      <a href="#" class="fa fa-instagram" ></a>
-      <a href="#" class="fa fa-twitter" ></a>
-      <a href="#" class="fa fa-google">+</a>
-      <img src="188.png" style=" height:75px; width:150px; padding-left:100px; padding-right:10px;">
+      <a href="https://www.w3schools.com/tags/tag_footer.asp" id="a" style="padding-left:30px; padding-bottom: 10px;"> Numero de Contacto</a>
+      <a href="https://www.w3schools.com/tags/tag_footer.asp" id="a" style="padding-right:260px; ">| Correo</a>
+      <a href="#" class="fa fa-facebook" ></a>
+        <a href="#" class="fa fa-instagram" ></a>
+        <a href="#" class="fa fa-twitter" ></a>
+        <a href="#" class="fa fa-google">+</a>
+        <img src="188.png" style=" height:75px; width:150px; padding-left:100px; padding-right:10px;">
 
-  </footer>
+    </footer>
 </body>
 
 </html>
