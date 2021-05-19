@@ -4,34 +4,38 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body{background-color: #403b33;height: 100%}
+body{background-color: #403b33;height: 100%;}
 
 td{text-align:center}
 #bUDEM
 {
   background-position: fixed;
   background-image: url('udemLogo.png');
-  background-size: 200px,40%;
+  background-size: 200px,10%;
   background-position: left, center;
   background-repeat: no-repeat;
   padding-top: 50px;
   padding-bottom: 50px;
+  height: 5%;
 }
 #bApp
 {
+  height: 90%;
   position: fixed;
-  height: 30%;
+  padding: 10%;
   background-color: white;
   width: 100%;
-  padding-top: 200px;
-  padding-bottom: 200px;
+  overflow-y: scroll;
 }
 footer
 {
+  height: 10%;
   position: fixed;
-  bottom: 20px;
+  width:100%;
+  bottom: 0px;
+  left:0px;
   display: block;
-  right: 30px;
+  background-color: #403b33;
 }
 #a
 {
@@ -134,6 +138,7 @@ footer
       <!--FALTA SCROLL A LA TABLA-->
       <form style="border: 2px solid black; width: 430px; padding:0px; position: fixed;">
           <legend style="text-align: center; vertical-align:; background-color:#403b33; color:white; ">Alumnos<input type="checkbox"style="position: relative; left: 130px;" >send to everyone</input></legend>
+          <div style="height:200px; overflow-y: scroll;">
           <button  class="accordion" type="button">Grupo 1 <input type="checkbox" style=" position: relative; left:300px;"></input></button>
           <div class="panel">
              <p>Joven 1 <input type="checkbox" style=" position: relative; left:300px;"></input></p>
@@ -146,7 +151,7 @@ footer
           <div class="panel">
              <p>Joven 1 <input type="checkbox" style=" position: relative; left:300px;"></input></p>
           </div>
-
+        </div>
       </div>
     </form>
 
@@ -165,15 +170,15 @@ footer
     </div>
   </div>
     <footer>
-
-  <a href="https://www.w3schools.com/tags/tag_footer.asp" id="a" style="padding-left:30px; padding-bottom: 10px;"> Numero de Contacto</a>
-  <a href="https://www.w3schools.com/tags/tag_footer.asp" id="a" style="padding-right:260px; padding">| Correo</a>
-    <a href="#" class="fa fa-facebook" ></a>
-      <a href="#" class="fa fa-instagram" ></a>
-      <a href="#" class="fa fa-twitter" ></a>
-      <a href="#" class="fa fa-google">+</a>
-      <img src="188.png" style=" height:75px; width:150px; padding-left:100px; padding-right:10px;">
-
+      <div style=" position:fixed; right:10px;">
+          <a href="https://www.w3schools.com/tags/tag_footer.asp" id="a" style="padding-left:30px; padding-bottom: 10px;"> Numero de Contacto</a>
+          <a href="https://www.w3schools.com/tags/tag_footer.asp" id="a" style="padding-right:260px; padding">| Correo</a>
+            <a href="#" class="fa fa-facebook" ></a>
+              <a href="#" class="fa fa-instagram" ></a>
+              <a href="#" class="fa fa-twitter" ></a>
+              <a href="#" class="fa fa-google">+</a>
+              <img src="188.png" style=" height:78px; width:150px; padding-left:100px; padding-right:10px; bottom:0px;">
+      </div>
   </footer>
 <script>
 var acc = document.getElementsByClassName("accordion");
