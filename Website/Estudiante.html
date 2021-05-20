@@ -3,105 +3,29 @@
 <html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body{background-color: #403b33;height: 100%}
-
-td{text-align:center}
-#bUDEM
-{
-  background-position: fixed;
-  background-image: url('udemLogo.png');
-  background-size: 200px,10%;
-  background-position: left, center;
-  background-repeat: no-repeat;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  height: 5%;
-}
-#bApp
-{
-  height: 90%;
-  position: fixed;
-  padding: 10%;
-  background-color: white;
-  width: 100%;
-  overflow-y: scroll;
-}
-footer
-{
-  height: 10%;
-  position: fixed;
-  width:100%;
-  bottom: 0px;
-  left:0px;
-  display: block;
-  background-color: #403b33;
-}
-#a
-{
-  color: black;
-}
-.fa {
-  padding: 10px;
-  font-size: 30px;
-  width: 50px;
-  -moz-border-radius:8px;
-  border-radius:8px;
-  text-align: center;
-  text-decoration: none;
-}
-.fa-instagram {
-  background: white;
-  color: #403b33;
-}
-.fa-twitter {
-  background: white;
-  color: #403b33;
-}
-.fa-google {
-  background: white;
-  color: #403b33;
-}
-
-/* Add a hover effect if you want */
-.fa:hover {
-  opacity: 0.7;
-}
-.circle {
-  height: 25px;
-  width: 25px;
-  background-color: #555;
-  border-radius: 50%;
-}
-/* Set a specific color for each brand */
-
-/* Facebook */
-.fa-facebook {
-  background: white;
-  color: #403b33;
-}
-</style>
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-  <div id= "bUDEM">
-  </div>
+<img src="Udemlogo.png" style="position: sticky; top:0px; left:0px; height:100px; width:200px;">
   <button style="position:fixed; right:110px;top: 10px; color:white; background: transparent; border:0px;">Home |</button>
   <button style="position:fixed; right:50px;top: 10px; color:yellow; background: transparent; border:0px;">Sign Out</button>
-  <div id= "bApp" style="position:fixed; top: 100px; height:50%; left: 0px;">
-    <div style=" position: fixed; left:15px;">
-      <form action = "/action_page.php" style=" display:inline-block; border: 2px solid black; width: 430px; height: 200px; padding:0px;">
+  <div id= "bApp">
+    <div style="position:relative;  min-width:1000px; max-width:1420px;">
+    <div style="position: relative;left:30px; padding-bottom:150px; padding-right:0px; padding-left:0px;width:440px; float: left;">
+      <form style="position: relative; border: 2px solid black; width: 430px; padding-bottom: 30px; top:30px;">
         <legend style=" text-align: center; background-color:#403b33; color:white;">Usuario</legend>
         <div style=" padding-left:10px;">
-              <label>Editar Documentos:</label> <br><button style="background-color:#403b33; color:white; position: fixed; left: 100px; display: inline-block; height:40px; width: 100px;">Editar</button><br><br><br>
+              <label>Editar Documentos:</label> <br><button style="background-color:#403b33; color:white; position: relative; left: 100px; display: inline-block; height: 50px; width: 100px;">Editar</button><br><br><br>
               <label> Cambiar password:</label>
               <!--FALTA AGREGAR EL POP UP-->
-              <br><button style="background-color:#403b33; color:white; position: fixed; left: 100px; display: inline-block; height:40px; width: 100px;">Editar</button>
+              <br><button style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height: 50px; width: 100px;">Editar</button>
 
         </div>
       </form>
-      <p></p>
-      <form action = "/action_page.php" style="border: 2px solid black; width: 430px; height: 250px; padding:0px; position: fixed;">
+      <form action = "/action_page.php" style="border: 2px solid black;  height:200px; width:430px; padding:0px; position: relative; top:50px;">
           <legend style="text-align: center; vertical-align:; background-color:#403b33; color:white; ">Contactar Capacitador</legend>
-          <img src="download (4).png" style=" float: left; vertical-align:center; display:inline-block; border: 2px solid black;">
+          <img src="download (4).png" style=" position:  relative; vertical-align:center; display:inline-block; border: 2px solid black;height:90%; width:40%;">
           <div style="display: inline-block; padding-left:10px;">
               <label for = "fname"> WhatsApp:</label><br>
               <label style=""> 12345671234</label><br><br>
@@ -109,22 +33,22 @@ footer
               <label style=""> maila@udem.edu</label><br><br><br><br>
             </div>
       </div>
+      <div style="position: relative; float: right; top:30px;">
+        <p>Title: </p>
+        <iframe width= "500" height="300" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+        </iframe>
+          <p></p>
+          <div style="position: relative; left:200px;">
+          <button class="circle"></button>
+          <button class="circle"></button>
+          <button class="circle"></button>
+          <button class="circle"></button>
+          <button class="circle"></button>
+          </div>
+        </div>
     </form>
-
-    <div style="position:fixed; right:15px;">
-      <p>Title: </p>
-      <iframe width= "500" height="300" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-      </iframe>
-<p></p>
-<div style="position: fixed; right:200px;">
-<button class="circle"></button>
-<button class="circle"></button>
-<button class="circle"></button>
-<button class="circle"></button>
-<button class="circle"></button>
 </div>
-    </div>
-  </div>
+</div>
   <footer>
     <div style=" position:fixed; right:10px;">
         <a href="https://www.w3schools.com/tags/tag_footer.asp" id="a" style="padding-left:30px; padding-bottom: 10px;"> Numero de Contacto</a>
