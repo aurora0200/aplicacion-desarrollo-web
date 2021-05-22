@@ -21,6 +21,7 @@ session_start();
       <h1>Alumnos</h1>
       <table>
         <tr>
+          <td>ID</td>
           <td>Grupo</td>
           <td>Nombre</td>
           <td>Correo</td>
@@ -29,16 +30,17 @@ session_start();
         </tr>
         <?php
           include "dbConn.php";
-          $instruccion = "SELECT idGrupo, nombre, correo, telefono from joven";
+          $instruccion = "SELECT idJoven,idGrupo, nombre, correo, telefono from joven";
           $consulta = mysqli_query ($conexion,$instruccion) or die ("Fallo en consulta");
           while ($fila = mysqli_fetch_array($consulta)) {
           ?>
           <tr>
+            <td><?php echo $fila['idJoven']; ?></td>
             <td><?php echo $fila['idGrupo']; ?></td>
             <td><?php echo $fila['nombre']; ?></td>
             <td><?php echo $fila['correo']; ?></td>
             <td><?php echo $fila['telefono']; ?></td>
-            <td><a href="delete.php?id=<?php echo $fila['correo']; ?>">Delete</a></td>
+            <td><a href="deleteJoven.php?id=<?php echo $fila['idJoven']; ?>">Delete</a></td>
           </tr>
           <?php
           }
@@ -58,12 +60,12 @@ session_start();
           $instruccionC = "SELECT nombreCap, correo, telCap from capacitador";
           $consultaC = mysqli_query ($conexion,$instruccionC) or die ("Fallo en consulta");
           while ($filaC = mysqli_fetch_array($consultaC)) {
-          ?>
+        ?>
           <tr>
             <td><?php echo $filaC['nombreCap']; ?></td>
             <td><?php echo $filaC['correo']; ?></td>
             <td><?php echo $filaC['telCap']; ?></td>
-            <td><a href="delete.php?id=<?php echo $filaC['correo']; ?>">Delete</a></td>
+            <td><a href="deleteCap.php?correo=<?php echo $filaC['correo']; ?>">Delete</a></td>
           </tr>
           <?php
           }
@@ -77,7 +79,7 @@ session_start();
         <div style=" padding-left:10px;">
                 <br>
                 <label>Generar Reporte:</label><br><br>
-                <p>del <input type="date" name="" value=" 04/29/2020"> al  <input type="date" name="" value=" 04/29/2021"></p><br>
+                <!-- <p>del <input type="date" name="" value=" 04/29/2020"> al  <input type="date" name="" value=" 04/29/2021"></p><br>-->
                   <button style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;">Generar</button><br><br><br>
                   <label> Agregar Estudiantes:</label><br>
                   <!--FALTA AGREGAR EL POP UP-->
@@ -88,21 +90,32 @@ session_start();
         </div>
       </form>
       <form style="border: 2px solid black; width: 430px; padding:0px; position: relative; top: 40px;">
-          <legend style="text-align: center; vertical-align:; background-color:#403b33; color:white; ">Alumnos<input type="checkbox"style="position: relative; left: 130px;" >send to everyone</input></legend>
+          <legend style="text-align: center; vertical-align:; background-color:#403b33; color:white; ">Alumnos</legend>
           <div style="height:200px; overflow-y: scroll;">
-          <button  class="accordion" type="button">Grupo 1 <input type="checkbox" style=" position: relative; left:300px;"></input></button>
-          <div class="panel">
-             <p>Joven 1<input  type="image"src="WhatsApp-logo.png" style="position:relative; height:20px; width:40px; padding:0px;"><input  type="image"src="MailLogo.png" style="position:relative; height:20px; width:30px; padding:0px;">  </input><input type="checkbox" style=" position: relative; left:200px;"></input></p>
+            <table>
+              <tr>
+                <td>Grupo</td>
+                <td>nombre</td>
+                <td>Correo</td>
+                <td>Acción</td>
+              </tr>
+            <?php
+              $instruccionG = "SELECT idGrupo, nombre, correo FROM joven ORDER BY idGrupo";
+              $consultaG = mysqli_query ($conexion,$instruccionG) or die ("Fallo en consulta");
+              while ($filaG = mysqli_fetch_array($consultaG)) {
+            ?>
+            <tr>
+              <td><?php echo $filaG['idGrupo']; ?></td>
+              <td><?php echo $filaG['nombre']; ?></td>
+              <td><?php echo $filaG['correo']; ?></td>
+              <td><input  type="image"src="WhatsApp-logo.png" style="position:relative; height:20px; width:40px; padding:0px;"><input  type="image"src="MailLogo.png" style="position:relative; height:20px; width:30px; padding:0px;"></td>
+            </tr>
+            <?php
+            }
+            ?>
+
+        </table>
           </div>
-          <button  class="accordion" type="button">Grupo 2 <input type="checkbox" style=" position: relative; left:300px;"></input></button>
-          <div class="panel">
-             <p>Joven 1<input  type="image"src="WhatsApp-logo.png" style="position:relative; height:20px; width:40px; padding:0px;"><input  type="image"src="MailLogo.png" style="position:relative; height:20px; width:30px; padding:0px;">  </input><input type="checkbox" style=" position: relative; left:200px;"></input></p>
-          </div>
-          <button  class="accordion" type="button">Grupo 2 <input type="checkbox" style=" position: relative; left:300px;"></input></button>
-          <div class="panel">
-             <p>Joven 1<input  type="image"src="WhatsApp-logo.png" style="position:relative; height:20px; width:40px; padding:0px;"><input  type="image"src="MailLogo.png" style="position:relative; height:20px; width:30px; padding:0px;">  </input><input type="checkbox" style=" position: relative; left:200px;"></input></p>
-          </div>
-        </div>
     </form>
 
   </div>
