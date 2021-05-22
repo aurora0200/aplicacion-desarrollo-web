@@ -90,14 +90,14 @@ form
 
     </form>
     <footer>
-
-  <a href="https://www.w3schools.com/tags/tag_footer.asp" id="a" style="padding-left:30px; padding-bottom: 10px;"> Numero de Contacto</a>
-  <a href="https://www.w3schools.com/tags/tag_footer.asp" id="a" style="padding-right:260px; padding">| Correo</a>
-    <a href="#" class="fa fa-facebook" ></a>
-      <a href="#" class="fa fa-instagram" ></a>
-      <a href="#" class="fa fa-twitter" ></a>
-      <a href="#" class="fa fa-google">+</a>
-      <img src="188.png" style=" height:75px; width:150px; padding-left:100px; padding-right:10px;">
-
+      <div style="position: fixed; right:10px;">
+        <a href="https://www.w3schools.com/tags/tag_footer.asp" id="a" style="padding-left:30px; padding-bottom: 10px;"> Numero de Contacto</a>
+        <a href="https://www.w3schools.com/tags/tag_footer.asp" id="a" style="padding-right:260px; padding">| Correo</a>
+        <a href="#" class="fa fa-facebook" ></a>
+        <a href="#" class="fa fa-instagram" ></a>
+        <a href="#" class="fa fa-twitter" ></a>
+        <a href="#" class="fa fa-google">+</a>
+        <img src="188.png" style=" height:75px; width:150px; padding-left:100px; padding-right:10px;">
+      </div>
   </footer>
 </html>

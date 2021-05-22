@@ -28,7 +28,6 @@ session_start();
               <label> Cambiar password:</label>
               <!--FALTA AGREGAR EL POP UP-->
               <br><button style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height: 50px; width: 100px;">Editar</button>
-
         </div>
       </form>
       <form action = "/action_page.php" style="border: 2px solid black;  height:200px; width:430px; padding:0px; position: relative; top:50px;">
