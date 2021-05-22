@@ -21,6 +21,7 @@ session_start();
       <h1>Alumnos</h1>
       <table>
         <tr>
+          <td>ID</td>
           <td>Grupo</td>
           <td>Nombre</td>
           <td>Correo</td>
@@ -29,16 +30,17 @@ session_start();
         </tr>
         <?php
           include "dbConn.php";
-          $instruccion = "SELECT idGrupo, nombre, correo, telefono from joven";
+          $instruccion = "SELECT idJoven,idGrupo, nombre, correo, telefono from joven";
           $consulta = mysqli_query ($conexion,$instruccion) or die ("Fallo en consulta");
           while ($fila = mysqli_fetch_array($consulta)) {
           ?>
           <tr>
+            <td><?php echo $fila['idJoven']; ?></td>
             <td><?php echo $fila['idGrupo']; ?></td>
             <td><?php echo $fila['nombre']; ?></td>
             <td><?php echo $fila['correo']; ?></td>
             <td><?php echo $fila['telefono']; ?></td>
-            <td><a href="delete.php?id=<?php echo $fila['correo']; ?>">Delete</a></td>
+            <td><a href="deleteJoven.php?id=<?php echo $fila['idJoven']; ?>">Delete</a></td>
           </tr>
           <?php
           }
@@ -63,7 +65,7 @@ session_start();
             <td><?php echo $filaC['nombreCap']; ?></td>
             <td><?php echo $filaC['correo']; ?></td>
             <td><?php echo $filaC['telCap']; ?></td>
-            <td><a href="delete.php?id=<?php echo $filaC['correo']; ?>">Delete</a></td>
+            <td><a href="deleteCap.php?correo=<?php echo $filaC['correo']; ?>">Delete</a></td>
           </tr>
           <?php
           }
@@ -77,7 +79,7 @@ session_start();
         <div style=" padding-left:10px;">
                 <br>
                 <label>Generar Reporte:</label><br><br>
-                <p>del <input type="date" name="" value=" 04/29/2020"> al  <input type="date" name="" value=" 04/29/2021"></p><br>
+                <!-- <p>del <input type="date" name="" value=" 04/29/2020"> al  <input type="date" name="" value=" 04/29/2021"></p><br>-->
                   <button style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;">Generar</button><br><br><br>
                   <label> Agregar Estudiantes:</label><br>
                   <!--FALTA AGREGAR EL POP UP-->
