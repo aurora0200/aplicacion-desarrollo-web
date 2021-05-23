@@ -1,5 +1,6 @@
 <?php
 session_start();
+$usuario=$_SESSION['logged_in_user_name'];
 ?>
 <!DOCTYPE html>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,7 +15,7 @@ session_start();
   <img src="Udemlogo.png" style="position: sticky; top:0px; left:0px; height:100px; width:200px;">
   <button style="position:fixed; right:110px;top: 10px; color:white; background: transparent; border:0px;">Home |</button>
   <form action="logout.php" method="POST">
-    //Logout
+
     <input type="submit" id="logout" value="Sign Out" style="position:fixed; right:50px;top: 10px; color:yellow; background: transparent; border:0px;">
   </form>
   <div id= "bApp">
@@ -34,20 +35,37 @@ session_start();
       <p></p>
       <!--FALTA SCROLL A LA TABLA-->
       <form style="border: 2px solid black; width: 430px; padding:0px; position: relative; top: 40px;">
-          <legend style="text-align: center; vertical-align:; background-color:#403b33; color:white; ">Alumnos<input type="checkbox"style="position: relative; left: 130px;" >send to everyone</input></legend>
+          <legend style="text-align: center; vertical-align:; background-color:#403b33; color:white; ">Alumnos</legend>
           <div style="height:200px; overflow-y: scroll;">
-          <button  class="accordion" type="button">Grupo 1 <input type="checkbox" style=" position: relative; left:300px;"></input></button>
-          <div class="panel">
-             <p>Joven 1<input  type="image"src="WhatsApp-logo.png" style="position:relative; height:20px; width:40px; padding:0px;"><input  type="image"src="MailLogo.png" style="position:relative; height:20px; width:30px; padding:0px;">  </input><input type="checkbox" style=" position: relative; left:200px;"></input></p>
-          </div>
-          <button  class="accordion" type="button">Grupo 2 <input type="checkbox" style=" position: relative; left:300px;"></input></button>
-          <div class="panel">
-             <p>Joven 1<input  type="image"src="WhatsApp-logo.png" style="position:relative; height:20px; width:40px; padding:0px;"><input  type="image"src="MailLogo.png" style="position:relative; height:20px; width:30px; padding:0px;">  </input><input type="checkbox" style=" position: relative; left:200px;"></input></p>
-          </div>
-          <button  class="accordion" type="button">Grupo 2 <input type="checkbox" style=" position: relative; left:300px;"></input></button>
-          <div class="panel">
-             <p>Joven 1<input  type="image"src="WhatsApp-logo.png" style="position:relative; height:20px; width:40px; padding:0px;"><input  type="image"src="MailLogo.png" style="position:relative; height:20px; width:30px; padding:0px;">  </input><input type="checkbox" style=" position: relative; left:200px;"></input></p>
-          </div>
+            <table>
+              <tr>
+                <td>Grupo</td>
+                <td>Nombre</td>
+                <td>Correo</td>
+                <td>Telefono</td>
+                <td>Acción</td>
+              </tr>
+            <?php
+              include "dbConn.php";
+              $sql="SELECT idC from capacitador WHERE correo ='".$usuario."'";
+              $consultaS =mysqli_query ($conexion,$sql) or die ("Fallo en consulta");
+              $res = mysqli_fetch_assoc($consultaS);
+              $id=$res ['idC'];
+              $instruccion="SELECT idGrupo, nombre, correo, telefono from listaalumnos1 WHERE idC='".$id."'";
+              $consulta = mysqli_query ($conexion,$instruccion) or die ("Fallo en consulta");
+              while ($fila = mysqli_fetch_array($consulta)) {
+            ?>
+            <tr>
+              <td><?php echo $fila['idGrupo']; ?></td>
+              <td><?php echo $fila['nombre']; ?></td>
+              <td><?php echo $fila['correo']; ?></td>
+              <td><?php echo $fila['telefono']; ?></td>
+              <td><input  type="image"src="WhatsApp-logo.png" style="position:relative; height:20px; width:40px; padding:0px;"><input  type="image"src="MailLogo.png" style="position:relative; height:20px; width:30px; padding:0px;"></td>
+            </tr>
+            <?php
+            }
+            ?>
+        </table>
         </div>
     </form>
   </div>
