@@ -17,7 +17,8 @@ session_start();
     <input type="submit" id="logout" value="Sign Out" style="position:fixed; right:50px;top: 10px; color:yellow; background: transparent; border:0px;">
   </form>
   <div id= "bApp">
-    <div style="position: relative; float: right; top:30px;">
+    <div style="min-width:100px;">
+    <div style="position: relative; float: right; top:30px;right:100px;">
       <h1>Alumnos</h1>
       <table>
         <tr>
@@ -45,7 +46,6 @@ session_start();
           <?php
           }
           ?>
-
       </table>
       <h1>Capacitadores</h1>
       <table>
@@ -56,7 +56,6 @@ session_start();
           <td>Acción</td>
         </tr>
         <?php
-
           $instruccionC = "SELECT nombreCap, correo, telCap from capacitador";
           $consultaC = mysqli_query ($conexion,$instruccionC) or die ("Fallo en consulta");
           while ($filaC = mysqli_fetch_array($consultaC)) {
@@ -70,33 +69,35 @@ session_start();
           <?php
           }
           ?>
-
       </table>
     </div>
-    <div style="position: relative;left:30px; padding-bottom:120px; width:440px;">
+    <div style="position: relative; float:left;left:30px; padding-bottom:120px; width:440px;">
       <form style="position: relative; border: 2px solid black; width: 430px; padding:0px; top:30px;">
         <legend style=" text-align: center; background-color:#403b33; color:white;">Acciones</legend>
         <div style=" padding-left:10px;">
                 <br>
                 <label>Generar Reporte:</label><br><br>
                 <!-- <p>del <input type="date" name="" value=" 04/29/2020"> al  <input type="date" name="" value=" 04/29/2021"></p><br>-->
-                  <button style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;">Generar</button><br><br><br>
-                  <label> Agregar Estudiantes:</label><br>
+                  <button style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;">Generar</button><br><br>
+                  <label> Agregar Estudiantes:</label><br><br><br>
                   <!--FALTA AGREGAR EL POP UP-->
                   <button class="open-button"  onclick="openForm()" style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;">Ir</button>
-                      <div class="form-popup" id="myForm">
+                      <div class="form-popup" id="myForm" style="position: fixed; top: 200px; left:500px; width:400px; height:300px; background-color:white">
+                        <legend style=" text-align: center; background-color:#403b33; color:white;">Cracion de usuario   <button type="button" class="btn cancel" onclick="closeForm()" style="position:relative; left:120px;">X</button> </legend>
                         <form action="/action_page.php" class="form-container">
-                          <h1>Login</h1>
-                          <label for="email"><b>Email</b></label>
-                          <input type="text" placeholder="Enter Email" name="email" required>
-
-                          <label for="psw"><b>Password</b></label>
-                          <input type="password" placeholder="Enter Password" name="psw" required>
-
+                          <label ><b>Tipo</b></label><br>
+                          <input type="radio" name="pick"><b>Alumno</b>  <input type="radio" name="pick"><b>Capacitador</b><input type="radio" name="pick"><b>Administrador</b><br>
+                          <label ><b>E-mail</b></label><br>
+                          <input type="text" placeholder="E-mail" name="email" required><br>
+                          <label ><b>Nombre</b></label><br>
+                          <input type="text" placeholder="nombre" name="nombre" required><br>
+                          <label ><b>Telefono</b></label><br>
+                          <input type="text" placeholder="telefono" name="telefono" required><br>
+                          <label ><b>Password</b></label><br>
+                          <input type="password" placeholder="Password" name="psw" required><br>
                           <button type="submit" class="btn">Login</button>
-                          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
                         </form>
-                      </div><br><br><br>
+                      </div><br>
                   <label> Cambiar password:</label><br>
                   <!--FALTA AGREGAR EL POP UP-->
                   <button style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;">Editar</button><br><br><br>
@@ -126,11 +127,10 @@ session_start();
             <?php
             }
             ?>
-
         </table>
           </div>
     </form>
-
+  </div>
   </div>
 
   </div>
@@ -160,6 +160,14 @@ for (i = 0; i < acc.length; i++) {
           }
         });
       }
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+
 </script>
 
 </body>

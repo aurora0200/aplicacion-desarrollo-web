@@ -223,10 +223,9 @@ tbody:hover tr:hover td {
 .form-popup {
   display: none;
   position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
+  border: 3px solid black;
+  -moz-border-radius:8px;
+  border-radius:8px;
 }
 
 /* Add styles to the form container */

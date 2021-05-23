@@ -1,4 +1,4 @@
-<?php
+0<?php
 session_start();
 $usuario=$_SESSION['logged_in_user_name'];
 ?>
