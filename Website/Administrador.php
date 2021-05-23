@@ -83,7 +83,20 @@ session_start();
                   <button style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;">Generar</button><br><br><br>
                   <label> Agregar Estudiantes:</label><br>
                   <!--FALTA AGREGAR EL POP UP-->
-                  <button style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;">Ir</button><br><br><br>
+                  <button class="open-button"  onclick="openForm()" style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;">Ir</button>
+                      <div class="form-popup" id="myForm">
+                        <form action="/action_page.php" class="form-container">
+                          <h1>Login</h1>
+                          <label for="email"><b>Email</b></label>
+                          <input type="text" placeholder="Enter Email" name="email" required>
+
+                          <label for="psw"><b>Password</b></label>
+                          <input type="password" placeholder="Enter Password" name="psw" required>
+
+                          <button type="submit" class="btn">Login</button>
+                          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                        </form>
+                      </div><br><br><br>
                   <label> Cambiar password:</label><br>
                   <!--FALTA AGREGAR EL POP UP-->
                   <button style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;">Editar</button><br><br><br>
