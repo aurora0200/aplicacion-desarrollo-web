@@ -98,11 +98,22 @@ session_start();
                           <button type="submit" class="btn">Login</button>
                         </form>
                       </div><br>
-                  <label> Cambiar password:</label><br>
+                  <label> Cambiar password:</label><br><br><br>
                   <!--FALTA AGREGAR EL POP UP-->
-                  <button style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;">Editar</button><br><br><br>
-        </div>
+                  <button class="open-button"  onclick="openForm2()" style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;">Editar</button>
+                      <div class="form-popup" id="myForm2" style="position: fixed; top: 200px; left:500px; width:400px; height:300px; background-color:white">
+                        <legend style=" text-align: center; background-color:#403b33; color:white;">Cracion de usuario   <button type="button" class="btn cancel" onclick="closeForm2()" style="position:relative; left:120px;">X</button> </legend>
+                        <form action="/action_page.php" class="form-container">
+                          <label ><b>Password</b></label><br>
+                          <input type="password" placeholder="Password" name="psw" required style=" position:relative; left: 30px;"><br>
+                          <label ><b> de nuevo Password</b></label><br>
+                          <input type="password" placeholder="Password" name="psw" required style=" position:relative; left: 30px;"><br>
+                          <button type="submit" class="btn" style=" position:relative; left: 45px;">Change</button>
+                        </form>
+                     </div>
+            </div>
       </form>
+      <br>
       <form style="border: 2px solid black; width: 430px; padding:0px; position: relative; top: 40px;">
           <legend style="text-align: center; vertical-align:; background-color:#403b33; color:white; ">Alumnos</legend>
           <div style="height:200px; overflow-y: scroll;">
@@ -161,11 +172,20 @@ for (i = 0; i < acc.length; i++) {
         });
       }
       function openForm() {
+        document.getElementById("myForm2").style.display = "none";
         document.getElementById("myForm").style.display = "block";
       }
 
       function closeForm() {
         document.getElementById("myForm").style.display = "none";
+      }
+      function openForm2() {
+        document.getElementById("myForm").style.display = "none";
+        document.getElementById("myForm2").style.display = "block";
+      }
+
+      function closeForm2() {
+        document.getElementById("myForm2").style.display = "none";
       }
 
 </script>
