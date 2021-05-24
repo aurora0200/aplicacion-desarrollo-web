@@ -23,20 +23,12 @@ session_start();
         <div style=" padding-left:10px;">
               <label>Editar Documentos:</label> <br>
               <input type="submit" id="docs" value="Editar" style="background-color:#403b33; color:white; position: relative; left: 100px; display: inline-block; height: 50px; width: 100px;">
+
               <br><br><br>
-              <label> Cambiar password:</label><br><br><br>
+              <label> Cambiar password:</label>
               <!--FALTA AGREGAR EL POP UP-->
-              <button class="open-button"  onclick="openForm2()" style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;">Editar</button>
-                  <div class="form-popup" id="myForm2" style="position: fixed; top: 200px; left:500px; width:400px; height:300px; background-color:white">
-                    <legend style=" text-align: center; background-color:#403b33; color:white;">Cracion de usuario   <button type="button" class="btn cancel" onclick="closeForm2()" style="position:relative; left:120px;">X</button> </legend>
-                    <form action="/action_page.php" class="form-container">
-                      <label ><b>Password</b></label><br>
-                      <input type="password" placeholder="Password" name="psw" required style=" position:relative; left: 30px;"><br>
-                      <label ><b> de nuevo Password</b></label><br>
-                      <input type="password" placeholder="Password" name="psw" required style=" position:relative; left: 30px;"><br>
-                      <button type="submit" class="btn" style=" position:relative; left: 45px;">Change</button>
-                    </form>
-                 </div>
+              <a href="ChangePass.php">Cambiar contraseña</a>
+
         </div>
       </form>
       <form action = "/action_page.php" style="border: 2px solid black;  height:200px; width:430px; padding:0px; position: relative; top:50px;">
@@ -76,14 +68,5 @@ session_start();
             <img src="188.png" style=" height:78px; width:150px; padding-left:100px; padding-right:10px; bottom:0px;">
     </div>
 </footer>
-<script>
-    function openForm2() {
-      document.getElementById("myForm2").style.display = "block";
-    }
-
-    function closeForm2() {
-      document.getElementById("myForm2").style.display = "none";
-    }
-</script>
 </body>
 </html>
