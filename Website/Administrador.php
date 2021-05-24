@@ -47,6 +47,7 @@ session_start();
           }
           ?>
       </table>
+
       <h1>Capacitadores</h1>
       <table>
         <tr>
@@ -81,36 +82,11 @@ session_start();
                   <button style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;">Generar</button><br><br>
                   <label> Agregar Estudiantes:</label><br><br><br>
                   <!--FALTA AGREGAR EL POP UP-->
-                  <button class="open-button"  onclick="openForm()" style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;">Ir</button>
-                      <div class="form-popup" id="myForm" style="position: fixed; top: 200px; left:500px; width:400px; height:300px; background-color:white">
-                        <legend style=" text-align: center; background-color:#403b33; color:white;">Cracion de usuario   <button type="button" class="btn cancel" onclick="closeForm()" style="position:relative; left:120px;">X</button> </legend>
-                        <form action="/action_page.php" class="form-container">
-                          <label ><b>Tipo</b></label><br>
-                          <input type="radio" name="pick"><b>Alumno</b>  <input type="radio" name="pick"><b>Capacitador</b><input type="radio" name="pick"><b>Administrador</b><br>
-                          <label ><b>E-mail</b></label><br>
-                          <input type="text" placeholder="E-mail" name="email" required><br>
-                          <label ><b>Nombre</b></label><br>
-                          <input type="text" placeholder="nombre" name="nombre" required><br>
-                          <label ><b>Telefono</b></label><br>
-                          <input type="text" placeholder="telefono" name="telefono" required><br>
-                          <label ><b>Password</b></label><br>
-                          <input type="password" placeholder="Password" name="psw" required><br>
-                          <button type="submit" class="btn">Login</button>
-                        </form>
-                      </div><br>
+                  <a href="NewAccount.php">Crear Cuenta</a>
+                  <br>
                   <label> Cambiar password:</label><br><br><br>
                   <!--FALTA AGREGAR EL POP UP-->
-                  <button class="open-button"  onclick="openForm2()" style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;">Editar</button>
-                      <div class="form-popup" id="myForm2" style="position: fixed; top: 200px; left:500px; width:400px; height:300px; background-color:white">
-                        <legend style=" text-align: center; background-color:#403b33; color:white;">Cracion de usuario   <button type="button" class="btn cancel" onclick="closeForm2()" style="position:relative; left:120px;">X</button> </legend>
-                        <form action="/action_page.php" class="form-container">
-                          <label ><b>Password</b></label><br>
-                          <input type="password" placeholder="Password" name="psw" required style=" position:relative; left: 30px;"><br>
-                          <label ><b> de nuevo Password</b></label><br>
-                          <input type="password" placeholder="Password" name="psw" required style=" position:relative; left: 30px;"><br>
-                          <button type="submit" class="btn" style=" position:relative; left: 45px;">Change</button>
-                        </form>
-                     </div>
+                  <a href="ChangePass.php">Cambiar contraseña</a>
             </div>
       </form>
       <br>
