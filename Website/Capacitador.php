@@ -1,4 +1,4 @@
-0<?php
+<?php
 session_start();
 $usuario=$_SESSION['logged_in_user_name'];
 ?>
@@ -26,19 +26,9 @@ $usuario=$_SESSION['logged_in_user_name'];
               <label>Publicar Informacion:</label> <br><textarea cols = "30" rows = "10" maxlength="50"  style=" max-height:200px; width:400px; max-width:400px;"></textarea><br><br>
                 <label>Subir Videos:</label> <br><input type="url" style=" width: 90%"></input><br><br>
                 <button style="background-color:#403b33; color:white; position: relative; left: 100px; display: inline-block; height:40px; width: 100px;">Publicar</button><br><br><br>
-                <label> Cambiar password:</label><br><br><br>
+                <label> Cambiar password:</label><br>
                 <!--FALTA AGREGAR EL POP UP-->
-                <button class="open-button"  onclick="openForm2()" style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;">Editar</button>
-                    <div class="form-popup" id="myForm2" style="position: fixed; top: 200px; left:500px; width:400px; height:300px; background-color:white">
-                      <legend style=" text-align: center; background-color:#403b33; color:white;">Cracion de usuario   <button type="button" class="btn cancel" onclick="closeForm2()" style="position:relative; left:120px;">X</button> </legend>
-                      <form action="/action_page.php" class="form-container">
-                        <label ><b>Password</b></label><br>
-                        <input type="password" placeholder="Password" name="psw" required style=" position:relative; left: 30px;"><br>
-                        <label ><b> de nuevo Password</b></label><br>
-                        <input type="password" placeholder="Password" name="psw" required style=" position:relative; left: 30px;"><br>
-                        <button type="submit" class="btn" style=" position:relative; left: 45px;">Change</button>
-                      </form>
-                   </div>
+                <a href="ChangePass.php">Cambiar contraseña</a>
         </div>
 
       </form>
@@ -105,13 +95,6 @@ for (i = 0; i < acc.length; i++) {
             panel.style.maxHeight = panel.scrollHeight + "px";
           }
         });
-      }
-      function openForm2() {
-        document.getElementById("myForm2").style.display = "block";
-      }
-
-      function closeForm2() {
-        document.getElementById("myForm2").style.display = "none";
       }
 </script>
 
