@@ -79,14 +79,16 @@ session_start();
                 <br>
                 <label>Generar Reporte:</label><br><br>
                 <!-- <p>del <input type="date" name="" value=" 04/29/2020"> al  <input type="date" name="" value=" 04/29/2021"></p><br>-->
-                  <button style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;">Generar</button><br><br>
+                  <button type="submit" style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;"><a href="registro.php" style="color:white;">Generar</a></button><br><br><br>
+
                   <label> Agregar Estudiantes:</label><br><br><br>
                   <!--FALTA AGREGAR EL POP UP-->
-                  <a href="NewAccount.php">Crear Cuenta</a>
+                  <button type="submit" style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;"><a href="NewAccount.php" style="color:white;">Crear cuenta</a></button><br><br><br>
                   <br>
                   <label> Cambiar password:</label><br><br><br>
                   <!--FALTA AGREGAR EL POP UP-->
-                  <a href="ChangePass.php">Cambiar contraseña</a>
+                  <button type="submit" style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;"><a href="ChangePass.php" style="color:white;">Cambiar contraseña</a></button><br><br><br>
+                  
             </div>
       </form>
       <br>
@@ -161,10 +163,4 @@ for (i = 0; i < acc.length; i++) {
       }
 
       function closeForm2() {
-        document.getElementById("myForm2").style.display = "none";
-      }
-
-</script>
-
-</body>
-</html>
+      
