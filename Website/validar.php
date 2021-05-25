@@ -19,12 +19,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
    $instruccionAdmin = "SELECT correo, contraseña FROM admin  WHERE correo = '".$usuario."' AND contraseña = '".$pass."' ";
    $consultaAdmin = mysqli_query ($conexion,$instruccionAdmin) or die ("Fallo en consulta");
    $nfilasAdmin = mysqli_num_rows ($consultaAdmin);
-   
+
    if ($nfilas > 0)/*Si es alumno*/
    {
      header("Location: Estudiante.php");
      $_SESSION['logged_in_user_name'] = $usuario;
-
    }
    elseif ($nfilasCap>0) {
      header("Location: Capacitador.php");
