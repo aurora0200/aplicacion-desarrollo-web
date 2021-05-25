@@ -27,25 +27,19 @@ $mail =  $_SESSION['logged_in_user_name'];
         <legend style=" text-align: center; background-color:#403b33; color:white;"><?php echo $mail; ?></legend>
         <div style=" padding-left:10px;">
               <label>Editar Documentos:</label> <br>
-              <input type="submit" id="docs" value="Editar" style="background-color:#403b33; color:white; position: relative; left: 100px; display: inline-block; height: 50px; width: 100px;">
-              <br><br><br>
-              <label> Cambiar password:</label><br><br><br>
+              <button type="submit" style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;"><a href="AgregarDatos.php" style="color:white;">Editar</a></button><br><br><br>
+              <br><br>
+              <label> Cambiar password:</label><br>
               <!--FALTA AGREGAR EL POP UP-->
-              <button class="open-button"  onclick="openForm2()" style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;">Editar</button>
-                  <div class="form-popup" id="myForm2" style="position: fixed; top: 200px; left:500px; width:400px; height:300px; background-color:white">
-                    <legend style=" text-align: center; background-color:#403b33; color:white;">Cracion de usuario   <button type="button" class="btn cancel" onclick="closeForm2()" style="position:relative; left:120px;">X</button> </legend>
-                    <form action="/action_page.php" class="form-container">
-                      <label ><b>Password</b></label><br>
-                      <input type="password" placeholder="Password" name="psw" required style=" position:relative; left: 30px;"><br>
-                      <label ><b> de nuevo Password</b></label><br>
-                      <input type="password" placeholder="Password" name="psw" required style=" position:relative; left: 30px;"><br>
-                      <button type="submit" class="btn" style=" position:relative; left: 45px;">Change</button>
-                    </form>
-                 </div>
+              <button type="submit" style="background-color:#403b33; color:white; position: relative;; left: 100px; display: inline-block; height:40px; width: 100px;"><a href="ChangePass.php" style="color:white;">Cambiar contraseña</a></button><br><br><br>
         </div>
       </form>
       <?php
       include "dbConn.php";
+      $instruccion = "SELECT idGrupo from joven WHERE correo='".$mail."'";
+      $consulta = mysqli_query ($conexion,$instruccion) or die ("Fallo en consulta de grupo");
+      $res = mysqli_fetch_assoc($consulta);
+      $grupo=$res['idGrupo'];
       $instruccion = "SELECT capacitador.telCap, capacitador.correo, capacitador.nombreCap FROM joven,grupo,capacitador WHERE joven.correo = '".$mail."' AND joven.idGrupo = grupo.idGrupo AND capacitador.idC = grupo.idC";
       $consulta = mysqli_query ($conexion,$instruccion) or die ("Fallo en consulta");
         while ($fila = mysqli_fetch_array($consulta)) {
@@ -67,21 +61,23 @@ $mail =  $_SESSION['logged_in_user_name'];
       </div>
       <div style="position: relative; float: right; top:30px;">
         <?php
-        $instruccion = "SELECT videos.links FROM joven,videos,grupo WHERE joven.correo = '".$mail."' AND grupo.idGrupo = joven.idGrupo  AND grupo.idGrupo = videos.idGrupo";
+        $instruccion = "SELECT link FROM videos WHERE idGrupo='".$grupo."'";
         $consulta = mysqli_query ($conexion,$instruccion) or die ("Fallo en consulta");
         $videoLink = mysqli_fetch_array($consulta)[0];
         $consulta = mysqli_query ($conexion,$instruccion) or die ("Fallo en consulta");
         ?>
         <div id="video">
-          <iframe width= "500" height="300" src="<?php echo $videoLink; ?>"> </iframe>
+          <iframe id="MyFrame" width= "500" height="300" src="<?php echo $videoLink; ?>"> </iframe>
         </div>
           <p></p>
           <div style="position: relative; left:200px;">
             <?php
+            $videosArray=array();
             while($fila = mysqli_fetch_array($consulta)){
-              $videoLink =  $fila['links'];
+              $videoLink =  $fila['link'];
+              array_push($videosArray, $videoLink);
             ?>
-          <button type="button" onclick=" changeVideo()<?php $videoLink =  $fila['links'];?>" img class="circle" disable default></button>
+          <button type="button" value="<?php echo $videoLink; ?>" onclick=" changeVideo(this)" img class="circle" disable default></button>
           <?php
             }
           ?>
@@ -102,10 +98,10 @@ $mail =  $_SESSION['logged_in_user_name'];
     </div>
 </footer>
 <script>
-    function changeVideo()
-    {
 
-      $('#video').load(window.Location.href + "#video");
+    function changeVideo(objButton){
+      document.getElementById("MyFrame").src = objButton.value;
+
     }
     function openForm2() {
       document.getElementById("myForm2").style.display = "block";
